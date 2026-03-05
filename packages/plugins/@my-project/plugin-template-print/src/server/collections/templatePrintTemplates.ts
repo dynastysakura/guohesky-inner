@@ -1,0 +1,54 @@
+/**
+ * This file is part of the NocoBase (R) project.
+ * Copyright (c) 2020-2024 NocoBase Co., Ltd.
+ * Authors: NocoBase Team.
+ *
+ * This project is dual-licensed under AGPL-3.0 and NocoBase Commercial License.
+ * For more information, please refer to: https://www.nocobase.com/agreement.
+ */
+
+import { defineCollection } from '@nocobase/database';
+
+export default defineCollection({
+  name: 'templatePrintTemplates',
+  title: '{{t("Print Templates")}}',
+  createdBy: true,
+  updatedBy: true,
+  fields: [
+    {
+      type: 'bigInt',
+      name: 'id',
+      autoIncrement: true,
+      primaryKey: true,
+      allowNull: false,
+    },
+    {
+      type: 'string',
+      name: 'name',
+    },
+    {
+      type: 'string',
+      name: 'templateType',
+    },
+    {
+      type: 'string',
+      name: 'collectionName',
+    },
+    {
+      type: 'string',
+      name: 'dataSourceKey',
+      defaultValue: 'main',
+    },
+    {
+      type: 'belongsTo',
+      name: 'file',
+      target: 'attachments',
+      foreignKey: 'fileId',
+    },
+    {
+      type: 'boolean',
+      name: 'enabled',
+      defaultValue: true,
+    },
+  ],
+});
