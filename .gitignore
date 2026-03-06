@@ -4,6 +4,7 @@ esm/
 es/
 !docs/docs/es
 .env
+.env.prod
 .env.e2e
 .DS_Store
 yarn-error.log

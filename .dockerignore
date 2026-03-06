@@ -17,3 +17,12 @@ packages/*/*/node_modules
 
 *.sqlite
 /uploads
+
+.git
+docker
+docs
+.github
+**/__tests__
+**/*.test.ts
+**/*.test.js
+DEPLOYMENT.md
