@@ -5,6 +5,90 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v2.0.14](https://github.com/nocobase/nocobase/compare/v2.0.13...v2.0.14) - 2026-03-11
+
+### 🚀 Improvements
+
+- **[Migration manager]** Improved migration checks, SQL download support, log formatting, and execution process visibility by @cgyrock
+
+### 🐛 Bug Fixes
+
+- **[client]**
+  - Fix the issue where custom fields in Filter form Field values cannot render the correct value input type ([#8823](https://github.com/nocobase/nocobase/pull/8823)) by @zhangzhonghe
+
+  - Fix the issue where the v2 filter form collapse button stops working after sorting fields ([#8843](https://github.com/nocobase/nocobase/pull/8843)) by @zhangzhonghe
+
+  - Fixed the issue where the reference template (v1) management page was missing filter and refresh action. ([#8833](https://github.com/nocobase/nocobase/pull/8833)) by @gchust
+
+  - sub form & sub table data not displayed due to permission check ([#8846](https://github.com/nocobase/nocobase/pull/8846)) by @chenos
+
+- **[Access control]** use collection.filterTargetKey instead of Model.primaryKeyField ([#8853](https://github.com/nocobase/nocobase/pull/8853)) by @chenos
+
+- **[UI templates]**
+  - Fixed the render error for action panel reference block. ([#8818](https://github.com/nocobase/nocobase/pull/8818)) by @gchust
+
+  - Fixed the issue where association records could not be loaded correctly after saving the details block as template. ([#8827](https://github.com/nocobase/nocobase/pull/8827)) by @gchust
+
+- **[Workflow: Approval]**
+  - Fix the issue where assignees not follow the order configured in the node by @mytharcher
+
+  - Fix untranslated labels in approval processing details by @zhangzhonghe
+
+- **[Migration manager]**
+  - Fix build error by @mytharcher
+
+  - Fix missing migration description and set the current time as the default by @cgyrock
+
+  - Fixed a potential process freeze caused by logging excessively large SQL statements included in migration error exceptions by @cgyrock
+
+  - Adjust temporary directory into storage, to support usage under cluster mode by @mytharcher
+
+## [v2.0.13](https://github.com/nocobase/nocobase/compare/v2.0.12...v2.0.13) - 2026-03-10
+
+### 🎉 New Features
+
+- **[client]** Support trigger workflow button to configure after success flow ([#8726](https://github.com/nocobase/nocobase/pull/8726)) by @mytharcher
+
+### 🚀 Improvements
+
+- **[Workflow]** Show all node types in adding menu even not available ([#8828](https://github.com/nocobase/nocobase/pull/8828)) by @mytharcher
+
+- **[AI: Knowledge base]** Refactored knowledge base document loading logic. by @cgyrock
+
+### 🐛 Bug Fixes
+
+- **[client]**
+  - Fixed the issue where the details block of an SQL collection encountered an error when loading data. ([#8817](https://github.com/nocobase/nocobase/pull/8817)) by @gchust
+
+  - Fixed the issue where the field linkage rules in the details block did not take effect during the initial render. ([#8813](https://github.com/nocobase/nocobase/pull/8813)) by @gchust
+
+- **[Office File Previewer]** Change modal height to a proper value to show more content of file ([#8835](https://github.com/nocobase/nocobase/pull/8835)) by @mytharcher
+
+- **[UI templates]** Fixed the issue where the reference block event flow in the table block could not be configured with a row click event flow. ([#8814](https://github.com/nocobase/nocobase/pull/8814)) by @gchust
+
+## [v2.0.12](https://github.com/nocobase/nocobase/compare/v2.0.11...v2.0.12) - 2026-03-09
+
+### 🚀 Improvements
+
+- **[Redis lock adapter]** Refactor due to API of LockManger changed in main repository by @mytharcher
+
+- **[Backup manager]** Add lock for scheduled backing-up across cluster nodes by @mytharcher
+
+### 🐛 Bug Fixes
+
+- **[client]**
+  - V2 blocks now only show actions supported by the current data source ([#8803](https://github.com/nocobase/nocobase/pull/8803)) by @zhangzhonghe
+
+  - Fix styling issue of the back button on v2 sub-pages ([#8810](https://github.com/nocobase/nocobase/pull/8810)) by @zhangzhonghe
+
+- **[lock-manager]** Fix racing condition issue of lock manager ([#8734](https://github.com/nocobase/nocobase/pull/8734)) by @mytharcher
+
+- **[server]** Fixed the error issue in data queries of non-database data sources ([#8776](https://github.com/nocobase/nocobase/pull/8776)) by @cgyrock
+
+- **[Access control]** Fixed Restful API data source data modification error. ([#8788](https://github.com/nocobase/nocobase/pull/8788)) by @cgyrock
+
+- **[Action: Export records]** fixed issue that belongsToArray field is blank in exported excel ([#8787](https://github.com/nocobase/nocobase/pull/8787)) by @cgyrock
+
 ## [v2.0.11](https://github.com/nocobase/nocobase/compare/v2.0.10...v2.0.11) - 2026-03-06
 
 ### 🎉 New Features
